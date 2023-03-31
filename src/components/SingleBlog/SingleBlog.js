@@ -11,18 +11,28 @@ const SingleBlog = props => {
   } = props.blogData;
 
   return (
-    <>
-      <div className="card">
-        <img src={blog_image} className="card-img-top" alt="..." />
+    <div className="mt-3">
+      <div className="card w-50">
+        <img src={blog_image}className="card-img-top w-full img-fluid"alt="..."/>
         <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
+          <div className="d-flex justify-content-between">
+            <div className="d-flex gap-2">
+              <div>
+                <img src={author_image}className="rounded-5"alt=""width={'40px'}/>
+              </div>
+              <div>
+                <h5>{author_name}</h5>
+                <p>{published_date}</p>
+              </div>
+            </div>
+              <p>{read_time} min read</p>
+          </div>
+          <h4 className="card-title">{blog_title}</h4>
+          <p>#beginners #programming</p>
+          <a href="/mark">Mark as read</a>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
