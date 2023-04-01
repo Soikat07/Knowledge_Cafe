@@ -6,10 +6,7 @@ import Cart from '../Cart/Cart';
 const Blogs = () => {
   const [data, setData] = useState([]);
   const [cart, setCart] = useState([]);
-  // console.log(cart);
-  const handleTimeToCart = blog => {
-    
-  }
+ 
   const handleBlogToCart = blogCart => {
     const newCart = [...cart, blogCart];
     setCart(newCart);
