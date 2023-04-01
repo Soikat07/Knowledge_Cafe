@@ -1,7 +1,7 @@
 import React from 'react';
-const CartTop = ({ cart }) => {
+const CartTop = ({ time }) => {
   let totalMin = 0;
-  for (const min of cart) {
+  for (const min of time) {
     totalMin = totalMin + parseInt(min.read_time);
   }
   return (

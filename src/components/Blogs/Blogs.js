@@ -5,8 +5,13 @@ import Cart from '../Cart/Cart';
 
 const Blogs = () => {
   const [data, setData] = useState([]);
+  const [time, setTime] = useState([]);
   const [cart, setCart] = useState([]);
  
+  const handleTimeToCart = blog => {
+    const newTimeCart = [...time, blog];
+    setTime(newTimeCart);
+  }
   const handleBlogToCart = blogCart => {
     const newCart = [...cart, blogCart];
     setCart(newCart);
@@ -25,13 +30,14 @@ const Blogs = () => {
           <SingleBlog
             blogData={blogData}
             key={blogData.id}
+            handleTimeToCart={handleTimeToCart}
             handleBlogToCart={handleBlogToCart}
           ></SingleBlog>
         ))}
       </div>
       <div className="col-4">
         <div className="position-sticky top-0">
-        <CartTop cart={cart}></CartTop>
+        <CartTop time={time}></CartTop>
         <Cart cart={cart}></Cart>
         </div>
       </div>

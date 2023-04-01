@@ -3,6 +3,7 @@ import React from 'react';
   import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 const SingleBlog = (props) => {
+  const handleTimeToCart = props.handleTimeToCart;
   const handleBlogToCart = props.handleBlogToCart;
 
   const {
@@ -48,7 +49,7 @@ const SingleBlog = (props) => {
           <p>#beginners #programming</p>
           <p
             className="text-primary text-decoration-underline"
-            onClick={() => handleBlogToCart(props.blogData)}
+            onClick={() => handleTimeToCart(props.blogData)}
           >
             Mark as read
           </p>
