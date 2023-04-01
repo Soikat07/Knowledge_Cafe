@@ -8,7 +8,7 @@ const Cart = ({ cart }) => {
   console.log(titleArray);
   return (
     <div className='border p-3'>
-      <h5>Bookmarked Blogs : {cart.length}</h5>
+      <h6>Bookmarked Blogs : {cart.length}</h6>
         {
           titleArray.map(title => 
             <div className='card p-2 m-2 shadow'>{title}</div>
