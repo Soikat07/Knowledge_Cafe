@@ -14,6 +14,11 @@ const Blogs = () => {
   }
   const handleBlogToCart = blogCart => {
     const newCart = [...cart, blogCart];
+      for (const single of cart) {
+        if (single.id === blogCart.id) {
+          toast('You Have Already Bookmarked This Blog');
+        }
+      }
     setCart(newCart);
   };
   
