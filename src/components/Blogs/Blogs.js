@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SingleBlog from '../SingleBlog/SingleBlog';
 import CartTop from '../CartTop/CartTop';
 import Cart from '../Cart/Cart';
-
+import { toast } from 'react-toastify';
 const Blogs = () => {
   const [data, setData] = useState([]);
   const [time, setTime] = useState([]);
