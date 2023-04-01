@@ -2,7 +2,9 @@ import React from 'react';
   import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
   import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
-const SingleBlog = props => {
+const SingleBlog = (props) => {
+  const handleBlogToCart = props.handleBlogToCart;
+
   const {
     blog_image,
     blog_title,
@@ -14,12 +16,8 @@ const SingleBlog = props => {
 
   return (
     <div className="mt-3">
-      <div className="card w-50">
-        <img
-          src={blog_image}
-          className="card-img-top w-full img-fluid"
-          alt="..."
-        />
+      <div className="card">
+        <img src={blog_image} className="card-img-top img-fluid" alt="..." />
         <div className="card-body">
           <div className="d-flex justify-content-between">
             <div className="d-flex gap-2">
@@ -37,15 +35,23 @@ const SingleBlog = props => {
               </div>
             </div>
             <p>
-              {read_time} min read{" "}
-              <a href='./marked'>
-                <FontAwesomeIcon icon={faBookmark} />
-              </a>
+              {read_time} min read{' '}
+              <span className='text-primary'>
+                <FontAwesomeIcon
+                  onClick={() => handleBlogToCart(props.blogData)}
+                  icon={faBookmark}
+                />
+              </span>
             </p>
           </div>
           <h4 className="card-title">{blog_title}</h4>
           <p>#beginners #programming</p>
-          <a href="/mark">Mark as read</a>
+          <p
+            className="text-primary text-decoration-underline"
+            onClick={() => handleBlogToCart(props.blogData)}
+          >
+            Mark as read
+          </p>
         </div>
       </div>
     </div>
